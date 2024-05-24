@@ -447,7 +447,7 @@ namespace Reallusion.Import
             MAGICA_CLOTH_AVAILABLE = MagicaCloth2IsAvailable();
             DYNAMIC_BONE_AVAILABLE = DynamicBoneIsAvailable();
 
-            string currentPrefabAssetPath = AssetDatabase.GetAssetPath(characterInfo.PrefabAsset)
+            string currentPrefabAssetPath = AssetDatabase.GetAssetPath(characterInfo.PrefabAsset);
             GameObject prefabRoot = PrefabUtility.LoadPrefabContents(currentPrefabAssetPath);
             PurgeAllPhysicsComponents(prefabRoot);
 
