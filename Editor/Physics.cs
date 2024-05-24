@@ -426,7 +426,7 @@ namespace Reallusion.Import
             DYNAMIC_BONE_AVAILABLE = DynamicBoneIsAvailable();
 
             // edit within the character prefab
-            using (var editingScope = new PrefabUtility.EditPrefabContentsScope(AssetDatabase.GetAssetPath(ImporterWindow.Current.Character.PrefabAsset)))
+            using (var editingScope = new PrefabUtility.EditPrefabContentsScope(AssetDatabase.GetAssetPath(characterInfo.PrefabAsset)))
             {
                 var prefabRoot = editingScope.prefabContentsRoot;
                 PurgeAllPhysicsComponents(prefabRoot);
@@ -447,7 +447,7 @@ namespace Reallusion.Import
             MAGICA_CLOTH_AVAILABLE = MagicaCloth2IsAvailable();
             DYNAMIC_BONE_AVAILABLE = DynamicBoneIsAvailable();
 
-            string currentPrefabAssetPath = AssetDatabase.GetAssetPath(ImporterWindow.Current.Character.PrefabAsset);
+            string currentPrefabAssetPath = AssetDatabase.GetAssetPath(characterInfo.PrefabAsset)
             GameObject prefabRoot = PrefabUtility.LoadPrefabContents(currentPrefabAssetPath);
             PurgeAllPhysicsComponents(prefabRoot);
 
