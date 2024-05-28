@@ -335,6 +335,10 @@ namespace Reallusion.Import
                 ImporterWindow.TrySetMultiPass(true);
             }
 
+            // Save prefab with new hair meshes since physics overwrites prefab with saved version (ADDED BY TONY)
+            PrefabUtility.SaveAsPrefabAsset(prefabInstance, prefabAssetPath);
+
+            
             bool clothPhysics = (characterInfo.ShaderFlags & CharacterInfo.ShaderFeatureFlags.ClothPhysics) > 0;
             bool hairPhysics = (characterInfo.ShaderFlags & CharacterInfo.ShaderFeatureFlags.HairPhysics) > 0;
             bool springBoneHair = (characterInfo.ShaderFlags & CharacterInfo.ShaderFeatureFlags.SpringBoneHair) > 0;
